@@ -3,19 +3,19 @@
 
 int ft_isalpha (int c)
 {
-    return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+    return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }
 
 int ft_isdigit (int c)
 {
-    return (c >= 0 && c <= 9)
+    return (c >= 0 && c <= 9);
 }
 
 int ft_isalnum (int c)
 {
     if (ft_isalpha(c) && ft_isdigit(c))
-        return 1
-    return 0,
+        return 1;
+    return 0;
 }
 int ft_isascii(int c)
 {
@@ -23,7 +23,7 @@ int ft_isascii(int c)
 }
 int ft_isprint(int c)
 {
-    return((c >= '!') && (c <= '~');
+    return((c >= '!') && (c <= '~') ? 1 : 0);
 }
 int ft_strlen (char *str)
 {
@@ -55,19 +55,19 @@ void ft_bzero(void *s, int  n)
 {
      ft_memset(s, 0, n);
 }
-void *ft_memcpy(const void *dest, const void *src, size_t n)
+void *ft_memcpy(const void *dest, const void *src, int n)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] && i < n)
+	while (((char *)src)[i] && i < n)
 	{
-		dest[i] = src[i];
+		((char *)dest)[i] = ((char *)src)[i];
 		i++;
 	}
 	while (i < n)
 	{
-		dest[i] = '\0';
+		((char *)dest)[i] = '\0';
 		i++;
 	}
 	return (dest);
