@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "get_next_line.h"
 
 size_t  ft_strlen(const char *s)
 {
@@ -9,16 +9,16 @@ size_t  ft_strlen(const char *s)
 		len++;
 	return (len);
 }
+
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
 	int	i;
     char *csrc;
     char *cdest;
 
+	i = 0;
     csrc = (char *)src;
     cdest = (char *)dest;
-	i = 0;
-
 	while (csrc[i] && i < n)
 	{
 		cdest[i] = csrc[i];
@@ -32,7 +32,7 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 	return (cdest);
 }
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
     char    *str;
     size_t  ls1;
@@ -49,16 +49,20 @@ char *ft_strjoin(char const *s1, char const *s2)
     return (str);
 }
 
-#include <string.h>
-#include <stdio.h>
-int main (void)
+char    *ft_strdup(const char *s)
 {
-	char *csrc = "hhkdjsuksncxmn";
-    char *csrc2 = ":::";
+    int     i;
+    char    *s_dup;
 
-    // ft_memmove(csrc+3, csrc+2, 0);
-    // memmove (csrc2+3, csrc2+2, 0);
-    printf("%s\n", ft_strjoin(csrc,csrc2));
-    printf("%s", ft_strjoin ("cd", "vxcs"));
-    return 0;
+    i  = 0;
+    s_dup = (char *)malloc (sizeof (char) * (ft_strlen(s) + 1));
+    if (!s_dup)
+        return (NULL);
+    while (s[i])
+    {
+        s_dup [i] = s[i];
+        i++;
+    }
+    s_dup[i] = '\0';
+    return (s_dup);
 }

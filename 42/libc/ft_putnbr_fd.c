@@ -23,6 +23,7 @@ void ft_putnbr_fd(int n, int fd)
     ft_putstr_fd(ft_itoa(n), fd);
     }
 }
+/*
 int main(void)
 {
     const char* filename = "out.txt";
@@ -39,3 +40,4 @@ int main(void)
     close(fd);
     exit(EXIT_SUCCESS);
 }
+*/

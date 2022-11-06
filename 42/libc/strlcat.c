@@ -13,10 +13,10 @@ size_t		ft_strlcat(char *dest, const char *src, size_t size)
 	else
 		value = ft_strlen(src) + ft_strlen(dest);
 	idx = 0;
-	while (dest[idx] != '\0')
+	while (!dest[idx])
 		idx++;
 	src_idx = 0;
-	while (src[src_idx] != '\0' && idx + 1 < size)
+	while (!src[src_idx] && idx + 1 < size)
 	{
 		dest[idx] = src[src_idx];
 		src_idx++;
