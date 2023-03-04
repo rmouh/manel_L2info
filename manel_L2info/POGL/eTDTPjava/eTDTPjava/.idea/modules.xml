@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/04TP-Circuits/04TP-Circuits.iml" filepath="$PROJECT_DIR$/04TP-Circuits/04TP-Circuits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05TP-Graphes-GenMyModel/05TP-Graphes-GenMyModel.iml" filepath="$PROJECT_DIR$/05TP-Graphes-GenMyModel/05TP-Graphes-GenMyModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07TD-TablesDeHachage/07TD-TablesDeHachage.iml" filepath="$PROJECT_DIR$/07TD-TablesDeHachage/07TD-TablesDeHachage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08TP-FormuLInf/08TP-FormuLInf.iml" filepath="$PROJECT_DIR$/08TP-FormuLInf/08TP-FormuLInf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10TD-HeritageTrain/10TD-HeritageTrain.iml" filepath="$PROJECT_DIR$/10TD-HeritageTrain/10TD-HeritageTrain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11TP-Visiteurs/11TP-Visiteurs.iml" filepath="$PROJECT_DIR$/11TP-Visiteurs/11TP-Visiteurs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaDuCours/JavaDuCours.iml" filepath="$PROJECT_DIR$/JavaDuCours/JavaDuCours.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP01-NREINES/TP01-NREINES.iml" filepath="$PROJECT_DIR$/TP01-NREINES/TP01-NREINES.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP02-Liste/TP02-Liste.iml" filepath="$PROJECT_DIR$/TP02-Liste/TP02-Liste.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP03-Graphes/TP03-Graphes.iml" filepath="$PROJECT_DIR$/TP03-Graphes/TP03-Graphes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP04-Circuits/TP04-Circuits.iml" filepath="$PROJECT_DIR$/TP04-Circuits/TP04-Circuits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP05-Fomule1/TP05-Fomule1.iml" filepath="$PROJECT_DIR$/TP05-Fomule1/TP05-Fomule1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP06-Liste-doublement-chainee/TP06-Liste-doublement-chainee.iml" filepath="$PROJECT_DIR$/TP06-Liste-doublement-chainee/TP06-Liste-doublement-chainee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TP07-Visiteurs/TP07-Visiteurs.iml" filepath="$PROJECT_DIR$/TP07-Visiteurs/TP07-Visiteurs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTP.iml" filepath="$PROJECT_DIR$/eTDTP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oldTdTp/oldTdTp.iml" filepath="$PROJECT_DIR$/oldTdTp/oldTdTp.iml" />
+    </modules>
+  </component>
+</project>

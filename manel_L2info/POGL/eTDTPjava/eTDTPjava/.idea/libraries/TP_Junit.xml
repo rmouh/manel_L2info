@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="TP-Junit">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/oldTdTp/TP-Robots/TP-Junit.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

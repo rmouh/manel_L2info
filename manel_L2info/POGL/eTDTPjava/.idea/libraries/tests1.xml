@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="tests1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/eTDTPjava/out/production/TP07Fomule1/Formule1Correction/tests/hamcrest-core-2.2-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/eTDTPjava/out/production/TP07Fomule1/Formule1Correction/tests/junit-4.13.2-sources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #f0f3f3; }
+body .c { color: #0099FF; font-style: italic } /* Comment */
+body .err { color: #AA0000; background-color: #FFAAAA } /* Error */
+body .k { color: #006699; font-weight: bold } /* Keyword */
+body .o { color: #555555 } /* Operator */
+body .ch { color: #0099FF; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #0099FF; font-style: italic } /* Comment.Multiline */
+body .cp { color: #009999 } /* Comment.Preproc */
+body .cpf { color: #0099FF; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #0099FF; font-style: italic } /* Comment.Single */
+body .cs { color: #0099FF; font-weight: bold; font-style: italic } /* Comment.Special */
+body .gd { background-color: #FFCCCC; border: 1px solid #CC0000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #003300; font-weight: bold } /* Generic.Heading */
+body .gi { background-color: #CCFFCC; border: 1px solid #00CC00 } /* Generic.Inserted */
+body .go { color: #AAAAAA } /* Generic.Output */
+body .gp { color: #000099; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #003300; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #99CC66 } /* Generic.Traceback */
+body .kc { color: #006699; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #006699; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #006699; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #006699 } /* Keyword.Pseudo */
+body .kr { color: #006699; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #007788; font-weight: bold } /* Keyword.Type */
+body .m { color: #FF6600 } /* Literal.Number */
+body .s { color: #CC3300 } /* Literal.String */
+body .na { color: #330099 } /* Name.Attribute */
+body .nb { color: #336666 } /* Name.Builtin */
+body .nc { color: #00AA88; font-weight: bold } /* Name.Class */
+body .no { color: #336600 } /* Name.Constant */
+body .nd { color: #9999FF } /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold } /* Name.Entity */
+body .ne { color: #CC0000; font-weight: bold } /* Name.Exception */
+body .nf { color: #CC00FF } /* Name.Function */
+body .nl { color: #9999FF } /* Name.Label */
+body .nn { color: #00CCFF; font-weight: bold } /* Name.Namespace */
+body .nt { color: #330099; font-weight: bold } /* Name.Tag */
+body .nv { color: #003333 } /* Name.Variable */
+body .ow { color: #000000; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mb { color: #FF6600 } /* Literal.Number.Bin */
+body .mf { color: #FF6600 } /* Literal.Number.Float */
+body .mh { color: #FF6600 } /* Literal.Number.Hex */
+body .mi { color: #FF6600 } /* Literal.Number.Integer */
+body .mo { color: #FF6600 } /* Literal.Number.Oct */
+body .sb { color: #CC3300 } /* Literal.String.Backtick */
+body .sc { color: #CC3300 } /* Literal.String.Char */
+body .sd { color: #CC3300; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #CC3300 } /* Literal.String.Double */
+body .se { color: #CC3300; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #CC3300 } /* Literal.String.Heredoc */
+body .si { color: #AA0000 } /* Literal.String.Interpol */
+body .sx { color: #CC3300 } /* Literal.String.Other */
+body .sr { color: #33AAAA } /* Literal.String.Regex */
+body .s1 { color: #CC3300 } /* Literal.String.Single */
+body .ss { color: #FFCC33 } /* Literal.String.Symbol */
+body .bp { color: #336666 } /* Name.Builtin.Pseudo */
+body .vc { color: #003333 } /* Name.Variable.Class */
+body .vg { color: #003333 } /* Name.Variable.Global */
+body .vi { color: #003333 } /* Name.Variable.Instance */
+body .il { color: #FF6600 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+
+<span class="c1">// Classe principale</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Graphes</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+	<span class="c1">// Insérer des exemples ici : construire un graphe, lui ajouter</span>
+	<span class="c1">// des sommets et des arêtes, et contrôler les couleurs, les</span>
+	<span class="c1">// composantes connexes, les accessibilités...</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Un graphe est constitué de sommets et d&#39;arêtes.</span>
+<span class="c1">// On veut notamment :</span>
+<span class="c1">// - Créer un graphe vide</span>
+<span class="c1">// - Ajouter des sommets</span>
+<span class="c1">// - Ajouter des arêtes</span>
+<span class="c1">// - Effectuer un coloriage</span>
+<span class="kd">class</span> <span class="nc">Graphe</span> <span class="o">{</span>
+    <span class="c1">// Ensembles de sommets et d&#39;arêtes, directement représentés comme tels.</span>
+    <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">&gt;</span> <span class="n">sommets</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Arete</span><span class="o">&gt;</span> <span class="n">aretes</span><span class="o">;</span>
+    <span class="c1">// Une composante connexe est représentée par un sommet principal</span>
+    <span class="c1">// Idée : utiliser l&#39;algorithme Union-Find de Tarjan (dans ce corrigé,</span>
+    <span class="c1">// il y a au passage les optimisations &quot;union par rangs&quot; et &quot;compression</span>
+    <span class="c1">// de chemins&quot;.</span>
+    <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">&gt;</span> <span class="n">composantes</span><span class="o">;</span>
+    <span class="c1">// Le nombre de composantes pourrait être recalculé à la demande plutôt</span>
+    <span class="c1">// qu&#39;enregistré, mais ça ne coûte pas cher.</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">nbComposantes</span><span class="o">;</span>
+
+    <span class="c1">// Graphe vide : pas de sommets, pas d&#39;arêtes, pas de composantes.</span>
+    <span class="kd">public</span> <span class="nf">Graphe</span><span class="o">()</span> <span class="o">{</span>
+	<span class="n">sommets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">&gt;();</span>
+	<span class="n">aretes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Arete</span><span class="o">&gt;();</span>
+	<span class="n">composantes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">&gt;();</span>
+	<span class="n">nbComposantes</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Ajout d&#39;un sommet de nom [n]</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ajouteSommet</span><span class="o">(</span><span class="n">String</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">Sommet</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sommet</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="n">n</span><span class="o">);</span>
+	<span class="n">sommets</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+	<span class="c1">// Un nouveau sommet crée une nouvelle composante</span>
+	<span class="n">composantes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+	<span class="n">nbComposantes</span><span class="o">++;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Ajout d&#39;une arête entre deux sommets [s1] et [s2]</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ajouteArete</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s1</span><span class="o">,</span> <span class="n">Sommet</span> <span class="n">s2</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">Arete</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Arete</span><span class="o">(</span><span class="n">s1</span><span class="o">,</span> <span class="n">s2</span><span class="o">);</span>
+	<span class="n">aretes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+	<span class="c1">// On récupère les composantes des deux sommets reliés...</span>
+	<span class="n">Sommet</span> <span class="n">sc1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="na">composante</span><span class="o">();</span>
+	<span class="n">Sommet</span> <span class="n">sc2</span> <span class="o">=</span> <span class="n">s2</span><span class="o">.</span><span class="na">composante</span><span class="o">();</span>
+	<span class="c1">// ... si elles étaient différentes, alors on les unit.</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">sc1</span> <span class="o">!=</span> <span class="n">sc2</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="n">nbComposantes</span><span class="o">--;</span>
+	    <span class="n">composantes</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">sc1</span><span class="o">);</span>
+	    <span class="n">composantes</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">sc2</span><span class="o">);</span>
+	    <span class="n">composantes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">sc1</span><span class="o">.</span><span class="na">union</span><span class="o">(</span><span class="n">sc2</span><span class="o">));</span>
+	<span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Vérifie que tous deux sommets adjacents ont des couleurs différentes</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">bienColore</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">for</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s</span> <span class="o">:</span> <span class="n">sommets</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="k">if</span> <span class="o">(!</span><span class="n">s</span><span class="o">.</span><span class="na">bienColore</span><span class="o">())</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Prend les sommets dans l&#39;ordre, affecte à chacun la plus petite couleur</span>
+    <span class="c1">// disponible, et renvoie la couleur maximale utilisée.</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">colorie</span><span class="o">()</span> <span class="o">{</span>
+	<span class="kt">int</span> <span class="n">couleurMax</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+	<span class="k">for</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s</span> <span class="o">:</span> <span class="n">sommets</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="n">couleurMax</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">couleurMax</span><span class="o">,</span> <span class="n">s</span><span class="o">.</span><span class="na">colorie</span><span class="o">());</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">couleurMax</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+
+<span class="c1">// Un sommet possède un nom et une couleur.</span>
+<span class="c1">// On peut :</span>
+<span class="c1">// - Créer un sommet</span>
+<span class="c1">// - Lui ajouter des arêtes incidentes</span>
+<span class="c1">// - Obtenir sa composante connexe</span>
+<span class="c1">// - Lui donner une couleur</span>
+<span class="c1">// Ici, les sommets représentent aussi des composantes connexes, on</span>
+<span class="c1">// peut donc encore :</span>
+<span class="c1">// - Unir la composante d&#39;un sommet avec celle d&#39;un autre sommet</span>
+<span class="kd">class</span> <span class="nc">Sommet</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">nom</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">couleur</span><span class="o">;</span>
+    <span class="c1">// Je croyais que j&#39;avais besoin de cet attribut mais à l&#39;heure</span>
+    <span class="c1">// actuelle il n&#39;est pas utilisé...</span>
+    <span class="kd">private</span> <span class="n">Graphe</span> <span class="n">graphe</span><span class="o">;</span>
+    <span class="c1">// Le dominant est le père du sommet considéré dans la structure Union-Find</span>
+    <span class="kd">private</span> <span class="n">Sommet</span> <span class="n">dominant</span><span class="o">;</span>
+    <span class="c1">// Le rang est une borne sur la hauteur de la structure Union-Find</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">rang</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+    <span class="c1">// Ensemble des arêtes incidentes</span>
+    <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Arete</span><span class="o">&gt;</span> <span class="n">incidences</span><span class="o">;</span>
+    <span class="c1">// Les sommets accessibles sont représentés par une table associant</span>
+    <span class="c1">// chaque sommet accessible à un chemin.</span>
+    <span class="c1">// On veut que le chemin mémorisé soit le plus court.</span>
+    <span class="c1">// On pourrait obtenir une représentation plus compacte en mémorisant</span>
+    <span class="c1">// moins d&#39;information : pour les besoins des méthodes du TP il suffirait</span>
+    <span class="c1">// d&#39;avoir la longueur du chemin et sa première arête.</span>
+    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">,</span> <span class="n">Chemin</span><span class="o">&gt;</span> <span class="n">accessibles</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Sommet</span><span class="o">(</span><span class="n">Graphe</span> <span class="n">g</span><span class="o">,</span> <span class="n">String</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">graphe</span> <span class="o">=</span> <span class="n">g</span><span class="o">;</span>
+	<span class="n">nom</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span>
+	<span class="n">dominant</span> <span class="o">=</span> <span class="k">this</span><span class="o">;</span>
+	<span class="c1">// Un sommet est créé sans arêtes incidentes.</span>
+	<span class="c1">// Le seul sommet accessible est lui-même, via le chemin vide.</span>
+	<span class="n">incidences</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Arete</span><span class="o">&gt;();</span>
+	<span class="n">accessibles</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">,</span> <span class="n">Chemin</span><span class="o">&gt;();</span>
+	<span class="n">accessibles</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">Chemin</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Ajout d&#39;une arête incidente.</span>
+    <span class="c1">// Pour mettre à jour l&#39;ensemble des sommets accessible dans le graphe,</span>
+    <span class="c1">// il faut prendre tous les sommets accessibles depuis le sommet actuel,</span>
+    <span class="c1">// tous les sommets accessibles depuis le sommet cible, et comparer le</span>
+    <span class="c1">// nouveau chemin créé avec le meilleur chemin qui existait déjà.</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ajouteArete</span><span class="o">(</span><span class="n">Arete</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">incidences</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+	<span class="k">for</span><span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">,</span> <span class="n">Chemin</span><span class="o">&gt;</span> <span class="n">accS1</span> <span class="o">:</span> <span class="k">this</span><span class="o">.</span><span class="na">accessibles</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+	    <span class="k">for</span><span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Sommet</span><span class="o">,</span> <span class="n">Chemin</span><span class="o">&gt;</span> <span class="n">accS2</span> <span class="o">:</span>
+		    <span class="n">a</span><span class="o">.</span><span class="na">autreExtremite</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">accessibles</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+		<span class="c1">// À compléter...</span>
+		<span class="c1">// On construit le nouveau chemin entre deux extrémités,</span>
+		<span class="c1">// on le compare à l&#39;éventuel chemin déjà existant, et on</span>
+		<span class="c1">// garde le plus court.</span>
+	    <span class="o">}</span>
+	<span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Un sommet est bien coloré s&#39;il n&#39;a pas la même couleur que ses voisins.</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">bienColore</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">for</span> <span class="o">(</span><span class="n">Arete</span> <span class="n">a</span> <span class="o">:</span> <span class="n">incidences</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">autreExtremite</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">couleur</span> <span class="o">==</span> <span class="k">this</span><span class="o">.</span><span class="na">couleur</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Affecte à un sommet la plus petite couleur pas déjà prise par ses</span>
+    <span class="c1">// voisins.</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">colorie</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">this</span><span class="o">.</span><span class="na">couleur</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+	<span class="k">while</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="na">bienColore</span><span class="o">())</span> <span class="k">this</span><span class="o">.</span><span class="na">couleur</span><span class="o">++;</span>
+	<span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">couleur</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="c1">// Donne le sommet représentant la composante connexe à laquelle</span>
+    <span class="c1">// appartient [this].</span>
+    <span class="kd">public</span> <span class="n">Sommet</span> <span class="nf">composante</span><span class="o">()</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">dominant</span> <span class="o">!=</span> <span class="k">this</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="c1">// Cette mise à jour correspond à l&#39;optimisation</span>
+	    <span class="c1">// &quot;compression de chemins&quot;.</span>
+	    <span class="n">dominant</span> <span class="o">=</span> <span class="n">dominant</span><span class="o">.</span><span class="na">composante</span><span class="o">();</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">dominant</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Fait l&#39;union de deux composantes connexes.</span>
+    <span class="c1">// Pré-condition : [this] et [s] doivent être chacun le représentant</span>
+    <span class="c1">// de sa composante connexe (c&#39;est-à-dire la racine de l&#39;arbre</span>
+    <span class="c1">// correspondant dans la structure Union-Find), sans quoi la structure</span>
+    <span class="c1">// de données serait corrompue.</span>
+    <span class="c1">// Remarque : pas forcément malin de donner une pré-condition si critique</span>
+    <span class="c1">// à une méthode qui n&#39;est pas privée. Il serait plus raisonnable de</span>
+    <span class="c1">// d&#39;abord appliquer la méthode [composante()].</span>
+    <span class="kd">protected</span> <span class="n">Sommet</span> <span class="nf">union</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+    	<span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rang</span> <span class="o">&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">rang</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="n">s</span><span class="o">.</span><span class="na">dominant</span> <span class="o">=</span> <span class="k">this</span><span class="o">;</span> <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+	<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+	    <span class="k">this</span><span class="o">.</span><span class="na">dominant</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+    	    <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">rang</span> <span class="o">==</span> <span class="n">s</span><span class="o">.</span><span class="na">rang</span><span class="o">)</span> <span class="n">s</span><span class="o">.</span><span class="na">rang</span><span class="o">++;</span>
+	    <span class="k">return</span> <span class="n">s</span><span class="o">;</span>
+	<span class="o">}</span>
+    <span class="o">}</span>
+    
+<span class="o">}</span>
+
+<span class="c1">// Une arête a deux extrémités (ordre arbitraire, on regarde des graphes</span>
+<span class="c1">// non orientés).</span>
+<span class="c1">// On peut :</span>
+<span class="c1">// - Savoir si un sommet est une extrémité</span>
+<span class="c1">// - Obtenir l&#39;autre extrémité si on en a déjà une</span>
+<span class="c1">// - Obtenir le poids de l&#39;arête (par défaut, 1)</span>
+<span class="kd">class</span> <span class="nc">Arete</span> <span class="o">{</span>
+    <span class="c1">// On représente les extrémités par un tableau à deux cases</span>
+    <span class="c1">// Comme souvent ici : c&#39;est une possibilité parmi d&#39;autres</span>
+    <span class="kd">private</span> <span class="n">Sommet</span><span class="o">[]</span> <span class="n">extremites</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Arete</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s1</span><span class="o">,</span> <span class="n">Sommet</span> <span class="n">s2</span><span class="o">)</span> <span class="o">{</span>
+	<span class="c1">// On range les extrémité dans l&#39;ordre donné par les paramètres</span>
+	<span class="c1">// Variante : on les classe en fonction d&#39;un ordre (pas utile ici)</span>
+	<span class="n">extremites</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sommet</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>
+	<span class="n">extremites</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="n">s1</span><span class="o">;</span>
+	<span class="n">extremites</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">s2</span><span class="o">;</span>
+	<span class="c1">// On inscrit l&#39;arête dans les listes d&#39;incidence de ses extrémités</span>
+	<span class="n">s1</span><span class="o">.</span><span class="na">ajouteArete</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+	<span class="n">s2</span><span class="o">.</span><span class="na">ajouteArete</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Donne l&#39;autre extrémité</span>
+    <span class="c1">// Pré-condition : [s] est l&#39;une des extrémités</span>
+    <span class="kd">public</span> <span class="n">Sommet</span> <span class="nf">autreExtremite</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">extremites</span><span class="o">[</span><span class="mi">0</span><span class="o">])</span> <span class="k">return</span> <span class="n">extremites</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
+	<span class="k">else</span> <span class="k">return</span> <span class="n">extremites</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>  
+    <span class="o">}</span>
+
+    <span class="c1">// Vérifie qu&#39;un sommet est une extrémité</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">admetExtremite</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span> <span class="o">(</span><span class="n">s</span> <span class="o">==</span> <span class="n">extremites</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">||</span> <span class="n">s</span> <span class="o">==</span> <span class="n">extremites</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Pour une arête non pondérée, le poids est 1</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPoids</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="mi">1</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Une arête pondérée est une arête avec en plus un poids.</span>
+<span class="kd">class</span> <span class="nc">AretePonderee</span> <span class="kd">extends</span> <span class="n">Arete</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">poids</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">AretePonderee</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s1</span><span class="o">,</span> <span class="n">Sommet</span> <span class="n">s2</span><span class="o">,</span> <span class="kt">int</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+	<span class="kd">super</span><span class="o">(</span><span class="n">s1</span><span class="o">,</span> <span class="n">s2</span><span class="o">);</span>
+	<span class="n">poids</span> <span class="o">=</span> <span class="n">p</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPoids</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="n">poids</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+
+
+<span class="c1">// Un chemin est un ensemble d&#39;arêtes entre une source et une destination</span>
+<span class="c1">// On peut :</span>
+<span class="c1">// - Créer un chemin vide</span>
+<span class="c1">// - Obtenir la longueur du chemin</span>
+<span class="c1">// - Ajouter une arête compatible à la fin du chemin</span>
+<span class="c1">// - Concaténer un chemin à la fin du chemin</span>
+<span class="c1">// - Obtenir le chemin inverse</span>
+<span class="kd">class</span> <span class="nc">Chemin</span> <span class="o">{</span>
+    <span class="kd">protected</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Arete</span><span class="o">&gt;</span> <span class="n">aretes</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Sommet</span> <span class="n">source</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Sommet</span> <span class="n">destination</span><span class="o">;</span>
+
+    <span class="c1">// Le chemin vide est quand même défini au niveau d&#39;un sommet</span>
+    <span class="kd">public</span> <span class="nf">Chemin</span><span class="o">(</span><span class="n">Sommet</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+	<span class="n">aretes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Arete</span><span class="o">&gt;();</span>
+	<span class="n">source</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+	<span class="n">destination</span> <span class="o">=</span> <span class="n">s</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// La longueur est la somme des poids des chemins</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">longueur</span><span class="o">()</span> <span class="o">{</span>
+	<span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+	<span class="k">for</span><span class="o">(</span><span class="n">Arete</span> <span class="n">a</span> <span class="o">:</span> <span class="n">aretes</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="n">l</span> <span class="o">+=</span> <span class="n">a</span><span class="o">.</span><span class="na">getPoids</span><span class="o">();</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">l</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Ajout d&#39;une arête à la fin du chemin</span>
+    <span class="c1">// - renvoie vraie si l&#39;arête est compatible</span>
+    <span class="c1">// - renvoie faux (et ne fait rien) sinon</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">ajouteArete</span><span class="o">(</span><span class="n">Arete</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">a</span><span class="o">.</span><span class="na">admetExtremite</span><span class="o">(</span><span class="n">destination</span><span class="o">))</span> <span class="o">{</span>
+	    <span class="n">aretes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+	    <span class="n">destination</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="na">autreExtremite</span><span class="o">(</span><span class="n">destination</span><span class="o">);</span>
+	    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Concaténation d&#39;un chemin à la fin du chemin, renvoie un booléen</span>
+    <span class="c1">// comme l&#39;ajout d&#39;arête</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">concatene</span><span class="o">(</span><span class="n">Chemin</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">c</span><span class="o">.</span><span class="na">source</span> <span class="o">!=</span> <span class="k">this</span><span class="o">.</span><span class="na">destination</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="k">for</span> <span class="o">(</span><span class="n">Arete</span> <span class="n">a</span> <span class="o">:</span> <span class="n">aretes</span><span class="o">)</span> <span class="o">{</span>
+	    <span class="k">this</span><span class="o">.</span><span class="na">ajouteArete</span><span class="o">(</span><span class="n">a</span><span class="o">);</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Construit un (nouveau) chemin renversé</span>
+    <span class="kd">public</span> <span class="n">Chemin</span> <span class="nf">rev</span><span class="o">()</span> <span class="o">{</span>
+	<span class="n">Chemin</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Chemin</span><span class="o">(</span><span class="n">destination</span><span class="o">);</span>
+	<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">aretes</span><span class="o">.</span><span class="na">size</span><span class="o">()-</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+	    <span class="n">c</span><span class="o">.</span><span class="na">ajouteArete</span><span class="o">(</span><span class="n">aretes</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">c</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</body>
+</html>

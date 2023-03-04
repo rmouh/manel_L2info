@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/JavaDuCours/JavaDuCours.iml" filepath="$PROJECT_DIR$/eTDTPjava/JavaDuCours/JavaDuCours.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/TP01-NREINES/TP01-NREINES.iml" filepath="$PROJECT_DIR$/eTDTPjava/TP01-NREINES/TP01-NREINES.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/TP02-Liste/TP02-Liste.iml" filepath="$PROJECT_DIR$/eTDTPjava/TP02-Liste/TP02-Liste.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/TP03-Graphes/TP03-Graphes.iml" filepath="$PROJECT_DIR$/eTDTPjava/TP03-Graphes/TP03-Graphes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/TP04-Circuits/TP04-Circuits.iml" filepath="$PROJECT_DIR$/eTDTPjava/TP04-Circuits/TP04-Circuits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/TP05-Fomule1/TP05-Fomule1.iml" filepath="$PROJECT_DIR$/eTDTPjava/TP05-Fomule1/TP05-Fomule1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/TP06-Liste-doublement-chainee/TP06-Liste-doublement-chainee.iml" filepath="$PROJECT_DIR$/eTDTPjava/TP06-Liste-doublement-chainee/TP06-Liste-doublement-chainee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eTDTPjava/TP07-Visiteurs/TP07-Visiteurs.iml" filepath="$PROJECT_DIR$/eTDTPjava/TP07-Visiteurs/TP07-Visiteurs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/eTDTPjava.iml" filepath="$PROJECT_DIR$/.idea/eTDTPjava.iml" />
+    </modules>
+  </component>
+</project>

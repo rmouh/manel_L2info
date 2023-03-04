@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Code">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/08TP-FormuLInf/Code/FormuLInfEclipseCorrection.zip!/" />
+      <root url="jar://$PROJECT_DIR$/08TP-FormuLInf/Code/FormuLInfEclipseInit.zip!/" />
+      <root url="jar://$PROJECT_DIR$/08TP-FormuLInf/Code/FormuLInfEclipseSquelette.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

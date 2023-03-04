@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="01TP-NReines">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/01TP-NReines/NReinesCorrige.zip!/" />
+      <root url="jar://$PROJECT_DIR$/01TP-NReines/NReinesOld.zip!/" />
+      <root url="jar://$PROJECT_DIR$/01TP-NReines/NReinesSquelette.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
